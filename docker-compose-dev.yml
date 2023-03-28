@@ -9,7 +9,7 @@ services:
     restart: always
     stop_grace_period: 5m
     container_name: "trustless_node"
-    command: ./tc-service -u trustless -p notrespassing -e http://host.docker.internal:8332
+    command: ./tc-service -u trustless -p notrespassing -e http://host.docker.internal:8332 -r -a -m 0x2699ff693FA45234595b6a1CaB6650c849380893:1000000000000000000
     volumes:
       - ./trustless_node_data:/node/tcdata
     ports:

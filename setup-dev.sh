@@ -2,7 +2,7 @@
 echo "\n----|Installing Docker...\n"
 
 curl -fsSL https://get.docker.com -o get-docker.sh
-sudo sh ./get-docker.sh --dry-run
+sudo sh ./get-docker.sh
 
 echo "\n----|Installing dependencies...\n"
 
@@ -27,4 +27,14 @@ printf "$CONFIG_BTCD" > ~/.bitcoin/bitcoin.conf
 
 bitcoind --daemon
 
-./tc -r -u btc -p abc -a -e 127.0.0.1:8332 -m 0x2699ff693FA45234595b6a1CaB6650c849380893:1000000000000000000
+echo "\n----|Cloning Repos...\n"
+
+git clone https://github.com/TrustlessComputer/trustless-node-easy.git ./trustless-node
+
+cd ./trustless-node
+
+git clone https://github.com/TrustlessComputer/tc-prebuilds.git ./tc-prebuilds
+
+echo "\n----|Starting Trustless node...\n"
+
+docker compose -f docker-compose-dev.yml up -d

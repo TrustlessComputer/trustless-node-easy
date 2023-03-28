@@ -2,7 +2,7 @@
 echo "\n----|Installing Docker...\n"
 
 curl -fsSL https://get.docker.com -o get-docker.sh
-sudo sh ./get-docker.sh --dry-run
+sudo sh ./get-docker.sh
 
 echo "\n----|Installing dependencies...\n"
 
@@ -34,8 +34,7 @@ cd ./trustless-node
 
 git clone https://github.com/TrustlessComputer/tc-prebuilds.git ./tc-prebuilds
 
-echo "\n----|Bulding Trustless node...\n"
+echo "\n----|Starting Trustless node...\n"
 
-docker build -t trustless-node .
+docker compose up -d
 
-echo "\n----|Bulding Trustless node...\n"
