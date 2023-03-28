@@ -13,9 +13,11 @@ sudo add-apt-repository -y ppa:luke-jr/bitcoincore
 sudo apt-get update
 sudo apt-get -y install bitcoin-qt bitcoin-tx bitcoind 
 
+bitcoin-cli -u trustless -p notrespassing stop
+
 CONFIG_BTCD=$(cat <<EOF
-rpcuser=btc
-rpcpassword=abc
+rpcuser=trustless
+rpcpassword=notrespassing
 rpcallowip=127.0.0.1
 regtest=1
 server=1
