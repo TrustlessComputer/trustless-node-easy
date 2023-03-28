@@ -8,7 +8,7 @@ This is a guide to setting up a trustless node on a VPS. It is intended for peop
 
 ### Guide for mainnet:
 
-    curl -s https://raw.githubusercontent.com/TrustlessComputer/trustless-node-easy/main/setup-dev.sh -o setup-trustless.sh
+    curl -s https://raw.githubusercontent.com/TrustlessComputer/trustless-node-easy/main/setup-mainnet.sh -o setup-trustless.sh
     chmod +x setup-trustless.sh
     sh ./setup-trustless.sh
 
