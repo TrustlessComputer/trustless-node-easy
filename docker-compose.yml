@@ -1,0 +1,46 @@
+version: "3.8"
+
+services:
+  trustless_node:
+    image: trustless-node:${DOCKER_TAG:-latest}
+    pull_policy: always
+    restart: always
+    stop_grace_period: 5m
+    container_name: "trustless_node"
+    command: ./tc-service -u trustless -p notrespassing -e 127.0.0.1:8332
+    volumes:
+      - ./trustless_node_data:/node/tcdata
+ 
+  redis_db:
+    extends:
+      file: ./explorer/services/docker-compose-redis.yml
+      service: redis_db
+
+  db:
+    extends:
+      file: ./explorer/services/docker-compose-db.yml
+      service: db
+
+  explorer:
+    depends_on:
+      - trustless_node
+      - db
+      - smart-contract-verifier
+      - redis_db
+    extends:
+      file: ./explorer/docker-compose-explorer.yml
+      service: blockscout
+  smart-contract-verifier:
+    extends:
+      file: ./explorer/services/docker-compose-smart-contract-verifier.yml
+      service: smart-contract-verifier
+
+  visualizer:
+    extends:
+      file: ./explorer/services/docker-compose-visualizer.yml
+      service: visualizer
+
+  sig-provider:
+    extends:
+      file: ./explorer/services/docker-compose-sig-provider.yml
+      service: sig-provider

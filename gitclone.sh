@@ -8,14 +8,6 @@ echo "\n----|Installing dependencies...\n"
 
 # sudo apt-get -y install build-essential libtool autotools-dev autoconf libssl-dev libboost-all-dev git
 
-echo "\n----|Cloning Repos...\n"
-
-git clone https://github.com/TrustlessComputer/trustless-node-easy.git ./trustless-node
-
-cd ./trustless-node
-
-git clone https://github.com/TrustlessComputer/tc-prebuilds.git ./tc-prebuilds
-
 echo "\n----|Installing Bitcoin Core...\n"
 # sudo add-apt-repository -y ppa:luke-jr/bitcoincore
 # sudo apt-get update
@@ -33,6 +25,16 @@ echo "\n----|Installing Bitcoin Core...\n"
 
 # bitcoind --daemon
 
-echo "\n----|Starting Trustless node...\n"
+echo "\n----|Cloning Repos...\n"
 
-# ./tc -u btc -p abc 
+git clone https://github.com/TrustlessComputer/trustless-node-easy.git ./trustless-node
+
+cd ./trustless-node
+
+git clone https://github.com/TrustlessComputer/tc-prebuilds.git ./tc-prebuilds
+
+echo "\n----|Bulding Trustless node...\n"
+
+docker build -t trustless-node .
+
+echo "\n----|Bulding Trustless node...\n"
