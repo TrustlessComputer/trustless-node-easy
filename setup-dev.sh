@@ -48,9 +48,9 @@ server=1
 rpcport=8332
 EOF
 )
-printf "$CONFIG_BTCD" > ~/.bitcoin/bitcoin.conf
+printf "$CONFIG_BTCD" > ./bitcoin/bitcoin.conf
 
-bitcoind --daemon
+bitcoind -datadir=./bitcoin --daemon
 
 echo "\n----|Cloning Repos...\n"
 

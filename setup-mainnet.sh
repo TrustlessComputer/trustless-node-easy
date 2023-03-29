@@ -47,9 +47,9 @@ rpcallowip=127.0.0.1
 server=1
 EOF
 )
-printf "$CONFIG_BTCD" > ~/.bitcoin/bitcoin.conf
+printf "$CONFIG_BTCD" > ./bitcoin/bitcoin.conf
 
-bitcoind --daemon
+bitcoind -datadir=./bitcoin --daemon
 
 echo "\n----|Cloning Repos...\n"
 
