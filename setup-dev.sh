@@ -38,6 +38,8 @@ sudo apt-get -y install bitcoin-qt bitcoin-tx bitcoind
 
 bitcoin-cli -rpcuser trustless -rpcpassword notrespassing stop
 
+mkdir ./bitcoin
+
 CONFIG_BTCD=$(cat <<EOF
 rpcuser=trustless
 rpcpassword=notrespassing
