@@ -31,7 +31,8 @@ services:
       - ./envs/common-blockscout.env
     environment:
       ETHEREUM_JSONRPC_VARIANT: "geth"
-      ETHEREUM_JSONRPC_HTTP_URL: http://host.docker.internal:10002/
+      ETHEREUM_JSONRPC_HTTP_URL: http://host.docker.internal:10002
+      ETHEREUM_JSONRPC_TRACE_URL: http://host.docker.internal:10002
       DATABASE_URL: postgresql://postgres:@host.docker.internal:7432/blockscout?ssl=false
       ECTO_USE_SSL: "false"
       SECRET_KEY_BASE: "56NtB48ear7+wMSf0IQuWDAAazhpb31qyc7GiyspBP2vh7t5zlCsF5QDv76chXeN"
@@ -57,6 +58,7 @@ services:
       INDEXER_RECEIPTS_BATCH_SIZE: 50
       INDEXER_EMPTY_BLOCKS_SANITIZER_BATCH_SIZE: 50 # sanitize empty block in this batch size
       SUBNETWORK: "Trustless Computer"
+      DISABLE_TOKEN_INSTANCE_FETCHER: "true"
     ports:
       - 4000:4000
     volumes:
