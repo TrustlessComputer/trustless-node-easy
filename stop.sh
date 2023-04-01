@@ -6,4 +6,4 @@ docker compose down
 
 echo "\n----|Stopping Bitcoind...\n"
 
-bitcoin-cli -rpcuser trustless -rpcpassword notrespassing stop
+bitcoin-cli -rpcuser=trustless -rpcpassword=notrespassing stop
