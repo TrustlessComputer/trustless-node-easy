@@ -38,7 +38,7 @@ sudo add-apt-repository -y ppa:luke-jr/bitcoincore
 sudo apt-get update
 sudo apt-get -y install bitcoin-qt bitcoin-tx bitcoind 
 
-bitcoin-cli -rpcuser trustless -rpcpassword notrespassing stop
+bitcoin-cli -rpcuser=trustless -rpcpassword=notrespassing stop
 
 mkdir ./bitcoin
 
@@ -52,14 +52,6 @@ EOF
 printf "$CONFIG_BTCD" > ./bitcoin/bitcoin.conf
 
 bitcoind -datadir=./bitcoin --daemon
-
-echo "\n----|Cloning Repos...\n"
-
-git clone https://github.com/TrustlessComputer/trustless-node-easy.git ./trustless-node
-
-cd ./trustless-node
-
-git clone https://github.com/TrustlessComputer/tc-prebuilds.git ./tc-prebuilds
 
 echo "\n----|Starting Trustless node...\n"
 

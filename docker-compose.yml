@@ -2,19 +2,24 @@ version: "3.8"
 
 services:
   trustless_node:
-    build:
-      context: ./
-      dockerfile: Dockerfile
+    image: ghcr.io/trustlesscomputer/tc:latest
     pull_policy: always
     restart: always
     stop_grace_period: 5m
-    container_name: "trustless_node"
+    container_name: "trustless_node_public"
+    env_file:
+      - ./tc.env
     network_mode: "host"
-    command: ./tc-service -u trustless -p notrespassing -e 127.0.0.1:8332
+    command: [
+      "/app/tc",
+      "-g",
+      "-u", "${BITCOIND_RPC_USERNAME}",
+      "-p", "${BITCOIND_RPC_PASSWORD}",
+      "-e", "${BITCOIND_RPC_ENDPOINT}",
+      "--btc-wallet", "${TC_BTC_WALLET_NAME}"
+    ]
     volumes:
-      - ./trustless_node_data:/node/tcdata
-    ports:
-      - 10002:10002
+      - ./trustless_node_data:/app/tcdata
  
   redis_db:
     extends:
