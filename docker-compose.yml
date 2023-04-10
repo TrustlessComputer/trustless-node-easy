@@ -10,11 +10,11 @@ services:
     network_mode: "host"
     command: [
       "/app/tc",
-      "-g",
-      "-u", "${BITCOIND_RPC_USERNAME}",
-      "-p", "${BITCOIND_RPC_PASSWORD}",
-      "-e", "${BITCOIND_RPC_ENDPOINT}",
-      "--btc-wallet", "${TC_BTC_WALLET_NAME}"
+      "-g",   
+      "-u", "trustless",
+      "-p", "notrespassing",
+      "-e", "127.0.0.1:8332",
+      "--btc-wallet", "trustless"
     ]
     volumes:
       - ./trustless_node_data:/app/tcdata

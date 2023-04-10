@@ -12,12 +12,12 @@ services:
       "/app/tc",
       "-r",
       "-a",
-      "-m", "${TC_WALLET_ADDRESS}:1000000000",
+      "-m", "0x2699ff693FA45234595b6a1CaB6650c849380893:1000000000",
       "-g",
-      "-u", "${BITCOIND_RPC_USERNAME}",
-      "-p", "${BITCOIND_RPC_PASSWORD}",
-      "-e", "${BITCOIND_RPC_ENDPOINT}",
-      "--btc-wallet", "${TC_BTC_WALLET_NAME}"
+      "-u", "trustless",
+      "-p", "notrespassing",
+      "-e", "127.0.0.1:8332",
+      "--btc-wallet", "trustless"
     ]
     volumes:
       - ./trustless_node_data:/app/tcdata
