@@ -12,7 +12,7 @@ services:
       "/app/tc",
       "-r",
       "-a",
-      "-m", "0x2699ff693FA45234595b6a1CaB6650c849380893:1000000000",
+      "-m", "0xB8Bc42098CC278e03302DbcF9138Cf04b22e6c04:1000000000",
       "-g",
       "-u", "trustless",
       "-p", "notrespassing",
