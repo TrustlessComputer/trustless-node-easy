@@ -8,20 +8,26 @@ services:
     stop_grace_period: 5m
     container_name: "trustless_node_public"
     network_mode: "host"
-    command: [
-      "/app/tc",
-      "-r",
-      "-a",
-      "-m", "0xB8Bc42098CC278e03302DbcF9138Cf04b22e6c04:1000000000000000000",
-      "-g",
-      "-u", "trustless",
-      "-p", "notrespassing",
-      "-e", "127.0.0.1:8332",
-      "--btc-wallet", "trustless"
-    ]
+    command:
+      [
+        "/app/tc",
+        "-r",
+        "-a",
+        "-m",
+        "0xB8Bc42098CC278e03302DbcF9138Cf04b22e6c04:0x52b7d2dcc80cd2e4000000",
+        "-g",
+        "-u",
+        "trustless",
+        "-p",
+        "notrespassing",
+        "-e",
+        "127.0.0.1:8332",
+        "--btc-wallet",
+        "trustless"
+      ]
     volumes:
       - ./trustless_node_data:/app/tcdata
- 
+
   redis_db:
     extends:
       file: ./explorer/services/docker-compose-redis.yml
