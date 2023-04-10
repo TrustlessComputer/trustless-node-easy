@@ -14,7 +14,7 @@ services:
       "/app/tc",
       "-r",
       "-a",
-      "-m", "${TC_BTC_WALLET_ADDRESS}:${TC_BTC_WALLET_AMOUNT}",
+      "-m", "${TC_WALLET_ADDRESS}:1000000000",
       "-g",
       "-u", "${BITCOIND_RPC_USERNAME}",
       "-p", "${BITCOIND_RPC_PASSWORD}",
