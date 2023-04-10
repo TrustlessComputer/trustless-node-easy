@@ -36,8 +36,8 @@ services:
       DATABASE_URL: postgresql://postgres:@host.docker.internal:7432/blockscout?ssl=false
       ECTO_USE_SSL: "false"
       SECRET_KEY_BASE: "56NtB48ear7+wMSf0IQuWDAAazhpb31qyc7GiyspBP2vh7t5zlCsF5QDv76chXeN"
-      COIN: "JUICE"
-      COIN_NAME: "JUICE"
+      COIN: "TC"
+      COIN_NAME: "TC"
       INDEXER_DISABLE_BLOCK_REWARD_FETCHER: "true" # disable block reward indexer as Polygon Edge doesn't support tracing
       INDEXER_DISABLE_PENDING_TRANSACTIONS_FETCHER: "true" # disable pending transactions indexer as Polygon Edge doesn't support tracing
       INDEXER_DISABLE_INTERNAL_TRANSACTIONS_FETCHER: "true" # disable internal transactions indexer as Polygon Edge doesn't support tracing
