@@ -62,4 +62,10 @@ cd ./trustless-node
 
 echo "\n----|Starting Trustless node...\n"
 
+BITCOIND_RPC_USERNAME=trustless
+BITCOIND_RPC_PASSWORD=notrespassing
+BITCOIND_RPC_ENDPOINT=127.0.0.1:8332
+TC_BTC_WALLET_NAME=trustless
+TC_WALLET_ADDRESS=0x2699ff693FA45234595b6a1CaB6650c849380893
+
 docker compose -f docker-compose-dev.yml up -d

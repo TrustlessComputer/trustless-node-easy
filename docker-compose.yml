@@ -7,8 +7,6 @@ services:
     restart: always
     stop_grace_period: 5m
     container_name: "trustless_node_public"
-    env_file:
-      - ./tc.env
     network_mode: "host"
     command: [
       "/app/tc",
