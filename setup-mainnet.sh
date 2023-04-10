@@ -53,6 +53,12 @@ printf "$CONFIG_BTCD" > ./bitcoin/bitcoin.conf
 
 bitcoind -datadir=./bitcoin --daemon
 
+echo "\n----|Cloning Repos...\n"
+
+git clone https://github.com/TrustlessComputer/trustless-node-easy.git ./trustless-node
+
+cd ./trustless-node
+
 echo "\n----|Starting Trustless node...\n"
 
 docker compose up -d
