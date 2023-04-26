@@ -40,7 +40,8 @@ services:
       "-p", "notrespassing",
       "-e", "127.0.0.1:8332",
       "--btc-wallet", "trustless",
-      "--tc-rpc-port","11002"
+      "--tc-rpc-port","11002",
+      "--tc-grpc-port","11003"
     ]
     volumes:
       - ./trustless_node_data_manual:/app/tcdata
