@@ -2,6 +2,8 @@ version: "3.8"
 
 services:
   trustless_node:
+    labels:
+    - "com.centurylinklabs.watchtower.enable=true"
     image: ghcr.io/trustlesscomputer/tc:latest
     pull_policy: always
     restart: always
@@ -21,6 +23,27 @@ services:
     ]
     volumes:
       - ./trustless_node_data:/app/tcdata
+
+  trustless_node_manual:
+    labels:
+    - "com.centurylinklabs.watchtower.enable=true"
+    image: ghcr.io/trustlesscomputer/tc:latest
+    pull_policy: always
+    restart: always
+    stop_grace_period: 5m
+    container_name: "trustless_node_public_manual"
+    network_mode: "host"
+    command: [
+      "/app/tc",
+      "-r",
+      "-u", "trustless",
+      "-p", "notrespassing",
+      "-e", "127.0.0.1:8332",
+      "--btc-wallet", "trustless",
+      "--tc-rpc-port","11002"
+    ]
+    volumes:
+      - ./trustless_node_data_manual:/app/tcdata
  
   redis_db:
     extends:
@@ -33,6 +56,8 @@ services:
       service: db
 
   explorer:
+    labels:
+    - "com.centurylinklabs.watchtower.enable=true"
     depends_on:
       - trustless_node
       - db
