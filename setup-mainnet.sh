@@ -45,6 +45,7 @@ mkdir ./bitcoin
 CONFIG_BTCD=$(cat <<EOF
 rpcuser=trustless
 rpcpassword=notrespassing
+rpcbind=127.0.0.1
 rpcallowip=127.0.0.1
 server=1
 EOF
