@@ -31,8 +31,8 @@ services:
       - ./envs/common-blockscout.env
     environment:
       ETHEREUM_JSONRPC_VARIANT: "geth"
-      ETHEREUM_JSONRPC_HTTP_URL: http://host.docker.internal:10002
-      ETHEREUM_JSONRPC_TRACE_URL: http://host.docker.internal:10002
+      ETHEREUM_JSONRPC_HTTP_URL: https://tc-node-auto.regtest.trustless.computer
+      ETHEREUM_JSONRPC_TRACE_URL: https://tc-node-auto.regtest.trustless.computer
       DATABASE_URL: postgresql://postgres:@host.docker.internal:7432/blockscout?ssl=false
       ECTO_USE_SSL: "false"
       SECRET_KEY_BASE: "56NtB48ear7+wMSf0IQuWDAAazhpb31qyc7GiyspBP2vh7t5zlCsF5QDv76chXeN"
