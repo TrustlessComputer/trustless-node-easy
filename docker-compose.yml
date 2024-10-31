@@ -14,11 +14,15 @@ services:
       "-u", "trustless",
       "-p", "notrespassing",
       "-e", "127.0.0.1:8332",
+      "--chainid", "222671",
       "--btc-wallet", "trustless"
     ]
     volumes:
       - ./trustless_node_data:/app/tcdata
- 
+    ports:
+      - 10002:10002
+      - 33333:33333
+
   redis_db:
     extends:
       file: ./explorer/services/docker-compose-redis.yml
