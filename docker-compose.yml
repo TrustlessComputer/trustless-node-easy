@@ -2,7 +2,7 @@ version: "3.8"
 
 services:
   trustless_node:
-    image: ghcr.io/trustlesscomputer/tc:latest
+    image: ghcr.io/trustlesscomputer/tc-shard-ai:latest
     pull_policy: always
     restart: always
     stop_grace_period: 5m
