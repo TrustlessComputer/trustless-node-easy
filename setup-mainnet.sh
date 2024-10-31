@@ -31,7 +31,7 @@ sudo sh ./get-docker.sh
 
 echo "\n----|Installing dependencies...\n"
 
-sudo apt-get -y install build-essential libtool autotools-dev autoconf libssl-dev libboost-all-dev
+sudo apt-get -y install build-essential libtool autotools-dev autoconf libssl-dev libboost-all-dev software-properties-common
 
 echo "\n----|Installing Bitcoin Core...\n"
 sudo add-apt-repository -y ppa:luke-jr/bitcoincore
