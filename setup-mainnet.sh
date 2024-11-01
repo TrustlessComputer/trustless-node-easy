@@ -56,7 +56,7 @@ bitcoind -datadir=./bitcoin --daemon
 
 echo "\n----|Cloning Repos...\n"
 
-git clone https://github.com/TrustlessComputer/trustless-node-easy.git ./trustless-node
+git clone --branch BitAI https://github.com/TrustlessComputer/trustless-node-easy.git ./trustless-node
 
 cd ./trustless-node
 
